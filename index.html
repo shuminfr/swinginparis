@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Swing in Paris - Agenda swing & danse</title>
+    <meta name="description" content="Agenda swing & danse a Paris. Lindy Hop, Balboa, Blues, Rock, Shag, West Coast Swing.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Aller au contenu</a>
+
+    <input class="lang-input" type="radio" name="lang" id="lang-fr" checked>
+    <input class="lang-input" type="radio" name="lang" id="lang-en">
+
+    <div class="page">
+      <header class="site-header">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true"></div>
+          <div>
+            <p class="kicker">Swing in Paris</p>
+            <h1 class="poster-title">
+              <span class="lang lang-fr inline-block" lang="fr">
+                <span class="poster-word">Swing</span>
+                <span class="poster-word">Paris</span>
+              </span>
+              <span class="lang lang-en inline-block" lang="en">
+                <span class="poster-word">Swing</span>
+                <span class="poster-word">Paris</span>
+              </span>
+            </h1>
+            <p class="lede">
+              <span class="lang lang-fr inline" lang="fr">Agenda swing, ecoles, communautes et culture. Mobile-first, rapide a consulter.</span>
+              <span class="lang lang-en inline" lang="en">Swing calendar, schools, communities, and culture. Mobile-first and quick to scan.</span>
+            </p>
+          </div>
+        </div>
+
+        <nav class="site-nav" aria-label="Sections">
+          <a href="#calendrier">Calendrier</a>
+          <a href="#styles">Styles</a>
+          <a href="#ecoles">Ecoles</a>
+          <a href="#communautes">Communautes</a>
+          <a href="#histoire">Histoire</a>
+        </nav>
+
+        <div class="lang-switch" role="group" aria-label="Langue">
+          <span class="lang-label">Langue</span>
+          <label for="lang-fr">FR</label>
+          <label for="lang-en">EN</label>
+        </div>
+      </header>
+
+      <main id="main">
+        <section class="hero">
+          <div class="hero-copy">
+            <div class="deco-line" aria-hidden="true"></div>
+            <h2>
+              <span class="lang lang-fr inline" lang="fr">Danser a Paris, chaque soir.</span>
+              <span class="lang lang-en inline" lang="en">Dance in Paris, every night.</span>
+            </h2>
+            <p class="lang lang-fr block" lang="fr">
+              Retrouvez les soirees swing, cours et evenements a Paris. Concu pour mobile, rapide a consulter,
+              et facile a partager avec votre groupe.
+            </p>
+            <p class="lang lang-en block" lang="en">
+              Find swing nights, classes, and events in Paris. Designed mobile-first, quick to browse,
+              and easy to share with your group.
+            </p>
+            <div class="cta-row">
+              <a class="btn primary" href="#calendrier">
+                <span class="lang lang-fr inline" lang="fr">Voir l'agenda</span>
+                <span class="lang lang-en inline" lang="en">View calendar</span>
+              </a>
+              <a class="btn ghost" href="https://www.swingin.paris/calendrierswingparis.html">
+                <span class="lang lang-fr inline" lang="fr">Planning liste</span>
+                <span class="lang lang-en inline" lang="en">List view</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="hero-card">
+            <div class="card-header">
+              <p class="tag">Focus</p>
+              <p class="card-title">
+                <span class="lang lang-fr inline" lang="fr">Cette semaine a Paris</span>
+                <span class="lang lang-en inline" lang="en">This week in Paris</span>
+              </p>
+            </div>
+            <div class="card-body">
+              <p class="lang lang-fr block" lang="fr">Lindy Hop, Balboa, Blues, West Coast Swing, Rock, Shag.</p>
+              <p class="lang lang-en block" lang="en">Lindy Hop, Balboa, Blues, West Coast Swing, Rock, Shag.</p>
+              <div class="pill-row">
+                <span class="pill">Lindy Hop</span>
+                <span class="pill">Balboa</span>
+                <span class="pill">Blues</span>
+                <span class="pill">WCS</span>
+                <span class="pill">Rock</span>
+              </div>
+              <a class="btn small" href="#styles">
+                <span class="lang lang-fr inline" lang="fr">Explorer les styles</span>
+                <span class="lang lang-en inline" lang="en">Explore styles</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section id="calendrier" class="section">
+          <div class="section-header">
+            <h2>
+              <span class="lang lang-fr inline" lang="fr">Calendrier swing</span>
+              <span class="lang lang-en inline" lang="en">Swing calendar</span>
+            </h2>
+            <p class="lang lang-fr block" lang="fr">
+              Mode agenda par defaut pour mobile. Ouvrez la vue mois si besoin.
+            </p>
+            <p class="lang lang-en block" lang="en">
+              Agenda view by default for mobile. Open the month view when needed.
+            </p>
+          </div>
+
+          <div class="calendar-card">
+            <iframe
+              title="Agenda Swing in Paris"
+              loading="lazy"
+              src="https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=Europe%2FParis&showPrint=0&showTabs=0&showCalendars=0&showTz=0&title=Swing%20In%20Paris&mode=AGENDA&src=aW5zd2luZ3dldHJ1c3RAZ21haWwuY29t&src=ZmwxYzVzbTJvY2JzMDdoazU0c2FkdHE3cWNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=ajY2dWY2cW80b3RoMGxhbTBlOWVoNHBka2dAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=b2I1dWRsNmZrbm1yYTZ2MmJnM2MwOWw4ajhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=YjFlYmZlNDFkYTk2MzIzYzIxNjhmMzg5NjMyNmJkYjNmNGE1MDNlNDI1YzZiMGY5ZTc0MDMxMGYyYjhmNjdkNkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=czIwb21kaWVlbmd2aGtoOWsyZmdqZHFvaDBAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=ZnByaG9scGNqbHEzYzlqdjFmNWxybHZsdDRAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=dmc2MzAxczRydHI1OWU1dG04Nzl1aWpsMzBAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=anY0YjUzdmtmZXB2MTFrZnNmcTEzbHU5aThAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=cWQ2OXI4cDUzMzJxbDhzcmg4b2wyMGVmOXNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=Z2wwa21ydnZnOXAwZTZwMW43MG0yZjJtaG9AZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=cnVkbmM5azlydDhtbTRiNXQybmJramw4czRAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=ZW5iajhiYTRmZWFlc2Q5ZWQyNTRzcmpocmtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=NXIyNmthaDg1Z2VsZDVuZGFyNzRybGFpbWdAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=c2JtZmRnamo5b3VndWE3OHJiZ3B0MTRvNmtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=YjE5YjUxYjhjM2RlMzQyZjkyNDllYzMxYzYyNTRlN2E0NzY5OTU0N2MxZWI1M2YxZjI0ZTY5YjMyOTlhOGJjM0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=M2xkMTdtOWgxaHNiMGRycGlsaWNkcjJzaTRAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=b2MwNnFzaGxlYW82bnA1amZscXFnamZ2ZGtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=djJoMHA3NmNtdm9uMWY5NGY2dHZ0aHZhNGtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=dWhubW0xZnA4NjM1aWVhNHR0cnBnZm9nMm9AZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=NWRoZjhiZWo2cWQ1bm9xdGZyZGdja25uMTRAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=OGw0bWplMDV0YnZidGNzc2s3Z2d0b21tM2dAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=ZjhlZG5lYmptOHU5bmlrbmUzOGN0a21yM29AZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=MnEzbmJkamFpNXV1ZmRhMWRmanQ2cmowNW9AZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=bGlrcWU3bW5nbmYxdDJlbTFjNGJlZG04ZzhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=N2NxY2xxOGFjZHMxcDlsaXJ2b3ZmdWc0bGNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=bzFvaWNndnI3dDMxaXQxZ2dmNDYxZDd2dDhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=ZTAwZTJuNXRqdmh1MzJpdW1zajJlaWo5ZW9AZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=bjRmOHB2ZGhzajlmNTduYnFkZGw1dmJwZmNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=MXBmZGw4cWhsaDdwYzI2bWZkc3RzODZmaDhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=a3MzNnVnMWV2Z2RzaW92a25tMTVuN2hsdGtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=NnIwazJnbmxwcm5hOWNqazU0bmpmbm50M2dAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=bHBqa2JqdGx0ODZpa3NyMzI0bG5lcGdjMWdAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=djd2a3JhcWtxbmhmcWRvdjcza2JqdTFsaHNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=M2ZvcDBvNmd0ZDVlNDJqN25vdGxwOTE4OWdAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=aTR1bmFwOXRxOGpyajdjMWkxbGdnMzJjNnNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=ZGVlMjMyZzFjbmVnYjZhMTdxdGw5YWw3M2NAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=YzAzZGE5MTUzZjhkYmZjYzAxOGM1NmVjNDEyMTFkMTBhYzBmN2UzOWM3N2FhNzk5YTY5N2RiNjlhY2NkNmJmOEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=bGVqODVkazdkaW92anF1MHVhZ282ZWtsY3NAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=ZXVuazdob2M2azZrcjVnazFkOHZta2Y2ZmdAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=c2k1ZDhkNnRsNWQ5bzdmNTR0c3U4cDMwazlpdm12ZWJAaW1wb3J0LmNhbGVuZGFyLmdvb2dsZS5jb20&src=b2NpdjZjbnQxdnE1bTZhaGY5Z2pwaW52cm9AZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=dTY2Y3B1cDM4OGk3bTZjcG8yZWNnZGhmNjhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=MmVqNzB2c3RlZDB2dWhoYjhyamt2ZHNxbzhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=bGVzYXJpc3Rvc3dpbmdAZ21haWwuY29t&src=bWlzc2VsZWN0cm9zd2luZ0BnbWFpbC5jb20&src=c3Bpcml0b2ZsaW5keS5hc3NvQGdtYWlsLmNvbQ&color=%23D81B60&color=%234285F4&color=%23C0CA33&color=%23D81B60&color=%23D50000&color=%233F51B5&color=%234285F4&color=%234285F4&color=%234285F4&color=%234285F4&color=%234285F4&color=%234285F4&color=%238E24AA&color=%23E67C73&color=%23EF6C00&color=%23A79B8E&color=%23F09300&color=%23D81B60&color=%23D81B60&color=%23B39DDB&color=%237CB342&color=%2333B679&color=%2333B679&color=%23795548&color=%234285F4&color=%239fa600&color=%239fa600&color=%234285F4&color=%234285F4&color=%23D81B60&color=%234285F4&color=%23795548&color=%23E67C73&color=%23009688&color=%23795548&color=%23795548&color=%23D81B60&color=%239E69AF&color=%239E69AF&color=%239E69AF&color=%234285F4&color=%234285F4&color=%234285F4&color=%23E4C441&color=%237986CB&color=%23009688&color=%238E24AA"
+            ></iframe>
+          </div>
+
+          <div class="calendar-actions">
+            <a class="btn" href="https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=Europe%2FParis&showPrint=0&showTabs=0&showCalendars=0&showTz=0&title=Swing%20In%20Paris&mode=AGENDA&src=aW5zd2luZ3dldHJ1c3RAZ21haWwuY29t&src=ZmwxYzVzbTJvY2JzMDdoazU0c2FkdHE3cWNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=ajY2dWY2cW80b3RoMGxhbTBlOWVoNHBka2dAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=b2I1dWRsNmZrbm1yYTZ2MmJnM2MwOWw4ajhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=YjFlYmZlNDFkYTk2MzIzYzIxNjhmMzg5NjMyNmJkYjNmNGE1MDNlNDI1YzZiMGY5ZTc0MDMxMGYyYjhmNjdkNkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=czIwb21kaWVlbmd2aGtoOWsyZmdqZHFvaDBAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=ZnByaG9scGNqbHEzYzlqdjFmNWxybHZsdDRAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=dmc2MzAxczRydHI1OWU1dG04Nzl1aWpsMzBAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=anY0YjUzdmtmZXB2MTFrZnNmcTEzbHU5aThAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=cWQ2OXI4cDUzMzJxbDhzcmg4b2wyMGVmOXNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=Z2wwa21ydnZnOXAwZTZwMW43MG0yZjJtaG9AZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=cnVkbmM5azlydDhtbTRiNXQybmJramw4czRAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=ZW5iajhiYTRmZWFlc2Q5ZWQyNTRzcmpocmtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=NXIyNmthaDg1Z2VsZDVuZGFyNzRybGFpbWdAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=c2JtZmRnamo5b3VndWE3OHJiZ3B0MTRvNmtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=YjE5YjUxYjhjM2RlMzQyZjkyNDllYzMxYzYyNTRlN2E0NzY5OTU0N2MxZWI1M2YxZjI0ZTY5YjMyOTlhOGJjM0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=M2xkMTdtOWgxaHNiMGRycGlsaWNkcjJzaTRAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=b2MwNnFzaGxlYW82bnA1amZscXFnamZ2ZGtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=djJoMHA3NmNtdm9uMWY5NGY2dHZ0aHZhNGtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=dWhubW0xZnA4NjM1aWVhNHR0cnBnZm9nMm9AZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=NWRoZjhiZWo2cWQ1bm9xdGZyZGdja25uMTRAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=OGw0bWplMDV0YnZidGNzc2s3Z2d0b21tM2dAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=ZjhlZG5lYmptOHU5bmlrbmUzOGN0a21yM29AZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=MnEzbmJkamFpNXV1ZmRhMWRmanQ2cmowNW9AZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=bGlrcWU3bW5nbmYxdDJlbTFjNGJlZG04ZzhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=N2NxY2xxOGFjZHMxcDlsaXJ2b3ZmdWc0bGNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=bzFvaWNndnI3dDMxaXQxZ2dmNDYxZDd2dDhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=ZTAwZTJuNXRqdmh1MzJpdW1zajJlaWo5ZW9AZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=bjRmOHB2ZGhzajlmNTduYnFkZGw1dmJwZmNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=MXBmZGw4cWhsaDdwYzI2bWZkc3RzODZmaDhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=a3MzNnVnMWV2Z2RzaW92a25tMTVuN2hsdGtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=NnIwazJnbmxwcm5hOWNqazU0bmpmbm50M2dAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=bHBqa2JqdGx0ODZpa3NyMzI0bG5lcGdjMWdAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=djd2a3JhcWtxbmhmcWRvdjcza2JqdTFsaHNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=M2ZvcDBvNmd0ZDVlNDJqN25vdGxwOTE4OWdAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=aTR1bmFwOXRxOGpyajdjMWkxbGdnMzJjNnNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=ZGVlMjMyZzFjbmVnYjZhMTdxdGw5YWw3M2NAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=YzAzZGE5MTUzZjhkYmZjYzAxOGM1NmVjNDEyMTFkMTBhYzBmN2UzOWM3N2FhNzk5YTY5N2RiNjlhY2NkNmJmOEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=bGVqODVkazdkaW92anF1MHVhZ282ZWtsY3NAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=ZXVuazdob2M2azZrcjVnazFkOHZta2Y2ZmdAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=c2k1ZDhkNnRsNWQ5bzdmNTR0c3U4cDMwazlpdm12ZWJAaW1wb3J0LmNhbGVuZGFyLmdvb2dsZS5jb20&src=b2NpdjZjbnQxdnE1bTZhaGY5Z2pwaW52cm9AZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=dTY2Y3B1cDM4OGk3bTZjcG8yZWNnZGhmNjhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=MmVqNzB2c3RlZDB2dWhoYjhyamt2ZHNxbzhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=bGVzYXJpc3Rvc3dpbmdAZ21haWwuY29t&src=bWlzc2VsZWN0cm9zd2luZ0BnbWFpbC5jb20&src=c3Bpcml0b2ZsaW5keS5hc3NvQGdtYWlsLmNvbQ&color=%23D81B60&color=%234285F4&color=%23C0CA33&color=%23D81B60&color=%23D50000&color=%233F51B5&color=%234285F4&color=%234285F4&color=%234285F4&color=%234285F4&color=%234285F4&color=%234285F4&color=%238E24AA&color=%23E67C73&color=%23EF6C00&color=%23A79B8E&color=%23F09300&color=%23D81B60&color=%23D81B60&color=%23B39DDB&color=%237CB342&color=%2333B679&color=%2333B679&color=%23795548&color=%234285F4&color=%239fa600&color=%239fa600&color=%234285F4&color=%234285F4&color=%23D81B60&color=%234285F4&color=%23795548&color=%23E67C73&color=%23009688&color=%23795548&color=%23795548&color=%23D81B60&color=%239E69AF&color=%239E69AF&color=%239E69AF&color=%234285F4&color=%234285F4&color=%234285F4&color=%23E4C441&color=%237986CB&color=%23009688&color=%238E24AA" target="_blank" rel="noreferrer">
+              <span class="lang lang-fr inline" lang="fr">Ouvrir dans Google Calendar</span>
+              <span class="lang lang-en inline" lang="en">Open in Google Calendar</span>
+            </a>
+            <details class="calendar-details">
+              <summary>
+                <span class="lang lang-fr inline" lang="fr">Voir la vue mois</span>
+                <span class="lang lang-en inline" lang="en">Open month view</span>
+              </summary>
+              <div class="calendar-card month-view">
+                <iframe
+                  title="Calendrier Swing in Paris"
+                  loading="lazy"
+                  src="https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=Europe%2FParis&showPrint=0&showTabs=0&showCalendars=0&showTz=0&title=Swing%20In%20Paris&mode=MONTH&src=aW5zd2luZ3dldHJ1c3RAZ21haWwuY29t&src=ZmwxYzVzbTJvY2JzMDdoazU0c2FkdHE3cWNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=ajY2dWY2cW80b3RoMGxhbTBlOWVoNHBka2dAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=b2I1dWRsNmZrbm1yYTZ2MmJnM2MwOWw4ajhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=YjFlYmZlNDFkYTk2MzIzYzIxNjhmMzg5NjMyNmJkYjNmNGE1MDNlNDI1YzZiMGY5ZTc0MDMxMGYyYjhmNjdkNkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=czIwb21kaWVlbmd2aGtoOWsyZmdqZHFvaDBAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=ZnByaG9scGNqbHEzYzlqdjFmNWxybHZsdDRAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=dmc2MzAxczRydHI1OWU1dG04Nzl1aWpsMzBAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=anY0YjUzdmtmZXB2MTFrZnNmcTEzbHU5aThAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=cWQ2OXI4cDUzMzJxbDhzcmg4b2wyMGVmOXNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=Z2wwa21ydnZnOXAwZTZwMW43MG0yZjJtaG9AZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=cnVkbmM5azlydDhtbTRiNXQybmJramw4czRAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=ZW5iajhiYTRmZWFlc2Q5ZWQyNTRzcmpocmtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=NXIyNmthaDg1Z2VsZDVuZGFyNzRybGFpbWdAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=c2JtZmRnamo5b3VndWE3OHJiZ3B0MTRvNmtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=YjE5YjUxYjhjM2RlMzQyZjkyNDllYzMxYzYyNTRlN2E0NzY5OTU0N2MxZWI1M2YxZjI0ZTY5YjMyOTlhOGJjM0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=M2xkMTdtOWgxaHNiMGRycGlsaWNkcjJzaTRAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=b2MwNnFzaGxlYW82bnA1amZscXFnamZ2ZGtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=djJoMHA3NmNtdm9uMWY5NGY2dHZ0aHZhNGtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=dWhubW0xZnA4NjM1aWVhNHR0cnBnZm9nMm9AZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=NWRoZjhiZWo2cWQ1bm9xdGZyZGdja25uMTRAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=OGw0bWplMDV0YnZidGNzc2s3Z2d0b21tM2dAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=ZjhlZG5lYmptOHU5bmlrbmUzOGN0a21yM29AZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=MnEzbmJkamFpNXV1ZmRhMWRmanQ2cmowNW9AZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=bGlrcWU3bW5nbmYxdDJlbTFjNGJlZG04ZzhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=N2NxY2xxOGFjZHMxcDlsaXJ2b3ZmdWc0bGNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=bzFvaWNndnI3dDMxaXQxZ2dmNDYxZDd2dDhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=ZTAwZTJuNXRqdmh1MzJpdW1zajJlaWo5ZW9AZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=bjRmOHB2ZGhzajlmNTduYnFkZGw1dmJwZmNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=MXBmZGw4cWhsaDdwYzI2bWZkc3RzODZmaDhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=a3MzNnVnMWV2Z2RzaW92a25tMTVuN2hsdGtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=NnIwazJnbmxwcm5hOWNqazU0bmpmbm50M2dAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=bHBqa2JqdGx0ODZpa3NyMzI0bG5lcGdjMWdAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=djd2a3JhcWtxbmhmcWRvdjcza2JqdTFsaHNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=M2ZvcDBvNmd0ZDVlNDJqN25vdGxwOTE4OWdAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=aTR1bmFwOXRxOGpyajdjMWkxbGdnMzJjNnNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=ZGVlMjMyZzFjbmVnYjZhMTdxdGw5YWw3M2NAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=YzAzZGE5MTUzZjhkYmZjYzAxOGM1NmVjNDEyMTFkMTBhYzBmN2UzOWM3N2FhNzk5YTY5N2RiNjlhY2NkNmJmOEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=bGVqODVkazdkaW92anF1MHVhZ282ZWtsY3NAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=ZXVuazdob2M2azZrcjVnazFkOHZta2Y2ZmdAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=c2k1ZDhkNnRsNWQ5bzdmNTR0c3U4cDMwazlpdm12ZWJAaW1wb3J0LmNhbGVuZGFyLmdvb2dsZS5jb20&src=b2NpdjZjbnQxdnE1bTZhaGY5Z2pwaW52cm9AZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=dTY2Y3B1cDM4OGk3bTZjcG8yZWNnZGhmNjhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=MmVqNzB2c3RlZDB2dWhoYjhyamt2ZHNxbzhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=bGVzYXJpc3Rvc3dpbmdAZ21haWwuY29t&src=bWlzc2VsZWN0cm9zd2luZ0BnbWFpbC5jb20&src=c3Bpcml0b2ZsaW5keS5hc3NvQGdtYWlsLmNvbQ&color=%23D81B60&color=%234285F4&color=%23C0CA33&color=%23D81B60&color=%23D50000&color=%233F51B5&color=%234285F4&color=%234285F4&color=%234285F4&color=%234285F4&color=%234285F4&color=%234285F4&color=%238E24AA&color=%23E67C73&color=%23EF6C00&color=%23A79B8E&color=%23F09300&color=%23D81B60&color=%23D81B60&color=%23B39DDB&color=%237CB342&color=%2333B679&color=%2333B679&color=%23795548&color=%234285F4&color=%239fa600&color=%239fa600&color=%234285F4&color=%234285F4&color=%23D81B60&color=%234285F4&color=%23795548&color=%23E67C73&color=%23009688&color=%23795548&color=%23795548&color=%23D81B60&color=%239E69AF&color=%239E69AF&color=%239E69AF&color=%234285F4&color=%234285F4&color=%234285F4&color=%23E4C441&color=%237986CB&color=%23009688&color=%238E24AA"
+                ></iframe>
+              </div>
+            </details>
+          </div>
+        </section>
+
+        <section id="styles" class="section">
+          <div class="section-header">
+            <h2>
+              <span class="lang lang-fr inline" lang="fr">Styles de danse</span>
+              <span class="lang lang-en inline" lang="en">Dance styles</span>
+            </h2>
+            <p class="lang lang-fr block" lang="fr">Choisissez un style pour trouver les ecoles et ressources.</p>
+            <p class="lang lang-en block" lang="en">Choose a style to find schools and resources.</p>
+          </div>
+
+          <div class="card-grid">
+            <article class="style-card">
+              <h3>Lindy Hop</h3>
+              <p class="lang lang-fr block" lang="fr">Swing social, joyeux et improvise.</p>
+              <p class="lang lang-en block" lang="en">Social swing, joyful and improvised.</p>
+              <a class="text-link" href="#ecoles">Voir les ecoles</a>
+            </article>
+            <article class="style-card">
+              <h3>Balboa</h3>
+              <p class="lang lang-fr block" lang="fr">Compact, elegant, parfait pour les tempos rapides.</p>
+              <p class="lang lang-en block" lang="en">Compact, elegant, perfect for fast tempos.</p>
+              <a class="text-link" href="#ecoles">Voir les ecoles</a>
+            </article>
+            <article class="style-card">
+              <h3>Blues</h3>
+              <p class="lang lang-fr block" lang="fr">Connexion profonde, tempos varies, musicalite riche.</p>
+              <p class="lang lang-en block" lang="en">Deep connection, varied tempos, rich musicality.</p>
+              <a class="text-link" href="#ecoles">Voir les ecoles</a>
+            </article>
+            <article class="style-card">
+              <h3>West Coast Swing</h3>
+              <p class="lang lang-fr block" lang="fr">Elasticite et lignes, ultra musical.</p>
+              <p class="lang lang-en block" lang="en">Elastic and linear, highly musical.</p>
+              <a class="text-link" href="#ecoles">Voir les ecoles</a>
+            </article>
+            <article class="style-card">
+              <h3>Rock 6 temps</h3>
+              <p class="lang lang-fr block" lang="fr">Energie et vitesse, classique des soirees parisiennes.</p>
+              <p class="lang lang-en block" lang="en">Energy and speed, a Paris night classic.</p>
+              <a class="text-link" href="#ecoles">Voir les ecoles</a>
+            </article>
+            <article class="style-card">
+              <h3>Boogie Woogie</h3>
+              <p class="lang lang-fr block" lang="fr">Groove vintage, pied leger, swing endiable.</p>
+              <p class="lang lang-en block" lang="en">Vintage groove, light feet, fiery swing.</p>
+              <a class="text-link" href="#ecoles">Voir les ecoles</a>
+            </article>
+          </div>
+        </section>
+
+        <section id="ecoles" class="section">
+          <div class="section-header">
+            <h2>
+              <span class="lang lang-fr inline" lang="fr">Ecoles et cours</span>
+              <span class="lang lang-en inline" lang="en">Schools and classes</span>
+            </h2>
+            <p class="lang lang-fr block" lang="fr">Groupes classes par style, en listes faciles a consulter sur mobile.</p>
+            <p class="lang lang-en block" lang="en">Grouped by style, in mobile-friendly lists.</p>
+          </div>
+
+          <div class="accordion-grid">
+            <details open>
+              <summary>
+                <span class="lang lang-fr inline" lang="fr">Ecoles de Lindy Hop</span>
+                <span class="lang lang-en inline" lang="en">Lindy Hop schools</span>
+              </summary>
+              <ul class="link-list">
+                <li><a href="https://www.shakethatswing.com/" target="_blank" rel="noreferrer">Shake That Swing</a></li>
+                <li><a href="https://jazzy-feet.com/" target="_blank" rel="noreferrer">Jazzy Feet</a></li>
+                <li><a href="https://www.swingdelight.com/" target="_blank" rel="noreferrer">Swing Delight</a></li>
+                <li><a href="https://www.swingydibop.com/" target="_blank" rel="noreferrer">Swingydibop</a></li>
+                <li><a href="https://groovit-dancestudio.com/" target="_blank" rel="noreferrer">Groov'it</a></li>
+                <li><a href="https://www.leschatonsswingueurs.tf/" target="_blank" rel="noreferrer">Les Chatons Swingueurs</a></li>
+                <li><a href="http://www.meduseceleste.com/" target="_blank" rel="noreferrer">Meduse Celeste</a></li>
+                <li><a href="https://charlotteandgold.com/" target="_blank" rel="noreferrer">Charlotte and Gold(win)</a></li>
+                <li><a href="https://rockinflip.com" target="_blank" rel="noreferrer">Rockin Flip</a></li>
+                <li><a href="https://www.swing-east.com/" target="_blank" rel="noreferrer">Swing East</a></li>
+                <li><a href="http://buttersmoothswing.com/" target="_blank" rel="noreferrer">Buttersmooth</a></li>
+                <li><a href="https://www.helloasso.com/associations/couleurs-swing" target="_blank" rel="noreferrer">Couleurs Swing</a></li>
+                <li><a href="https://templeduswing.com/" target="_blank" rel="noreferrer">Le Temple du Swing</a></li>
+                <li><a href="https://www.paris-swing.com/" target="_blank" rel="noreferrer">Paris Swing</a></li>
+                <li><a href="https://www.swingcotton.com/" target="_blank" rel="noreferrer">Swing Cotton</a></li>
+                <li><a href="https://swinghouse.fr/planning" target="_blank" rel="noreferrer">Swing House</a></li>
+                <li><a href="https://www.socialswingsysteme.com/" target="_blank" rel="noreferrer">Social Swing Systeme</a></li>
+              </ul>
+            </details>
+
+            <details>
+              <summary>
+                <span class="lang lang-fr inline" lang="fr">Ecoles de Balboa</span>
+                <span class="lang lang-en inline" lang="en">Balboa schools</span>
+              </summary>
+              <ul class="link-list">
+                <li><a href="https://www.shakethatswing.com/" target="_blank" rel="noreferrer">Shake That Swing</a></li>
+                <li><a href="https://webaltheworld.wixsite.com/solaudanse" target="_blank" rel="noreferrer">We Bal The World</a></li>
+                <li><a href="https://www.swingydibop.com/" target="_blank" rel="noreferrer">Swingydibop</a></li>
+                <li><a href="https://templeduswing.com/" target="_blank" rel="noreferrer">Le Temple du Swing</a></li>
+                <li><a href="https://www.leschatonsswingueurs.tf/" target="_blank" rel="noreferrer">Les Chatons Swingueurs</a></li>
+              </ul>
+            </details>
+
+            <details>
+              <summary>
+                <span class="lang lang-fr inline" lang="fr">Ecoles de Blues</span>
+                <span class="lang lang-en inline" lang="en">Blues schools</span>
+              </summary>
+              <ul class="link-list">
+                <li><a href="https://www.shakethatswing.com/" target="_blank" rel="noreferrer">Shake That Swing</a></li>
+                <li><a href="https://groovit-dancestudio.com/" target="_blank" rel="noreferrer">Groov'it</a></li>
+                <li><a href="https://www.swingydibop.com/" target="_blank" rel="noreferrer">Swingydibop</a></li>
+                <li><a href="https://www.leschatonsswingueurs.tf/" target="_blank" rel="noreferrer">Les Chatons Swingueurs</a></li>
+              </ul>
+            </details>
+
+            <details>
+              <summary>
+                <span class="lang lang-fr inline" lang="fr">Ecoles de West Coast Swing</span>
+                <span class="lang lang-en inline" lang="en">West Coast Swing schools</span>
+              </summary>
+              <ul class="link-list">
+                <li><a href="https://templeduswing.com/" target="_blank" rel="noreferrer">Temple du Swing</a></li>
+                <li><a href="https://www.connexionswing.com/" target="_blank" rel="noreferrer">Connexion Swing</a></li>
+                <li><a href="https://www.topwesties.fr/" target="_blank" rel="noreferrer">Top Westies</a></li>
+                <li><a href="https://www.studiodiabolo.fr/" target="_blank" rel="noreferrer">StudioDiabolo</a></li>
+                <li><a href="https://www.dkdance.com/" target="_blank" rel="noreferrer">DK'Dance</a></li>
+                <li><a href="https://intensive-danse.cmonsite.fr/plannings-cours-et-pratiques-p213085.html" target="_blank" rel="noreferrer">Intensive Danse Paris</a></li>
+              </ul>
+            </details>
+
+            <details>
+              <summary>
+                <span class="lang lang-fr inline" lang="fr">Ecoles de Rock 6 temps</span>
+                <span class="lang lang-en inline" lang="en">Rock schools</span>
+              </summary>
+              <ul class="link-list">
+                <li><a href="https://zeartstudios.com/cours/cours-rock-paris/" target="_blank" rel="noreferrer">Ze Art Studios</a></li>
+                <li><a href="https://magdanse-paris.fr/" target="_blank" rel="noreferrer">Studio MagDanse</a></li>
+                <li><a href="https://ens-paris-saclay.fr/campus/associations-et-clubs-etudiants/club-de-rock" target="_blank" rel="noreferrer">Cours avec Guillaume</a></li>
+                <li><a href="https://www.olarock.com/rock.shtml" target="_blank" rel="noreferrer">Ola Rock</a></li>
+                <li><a href="https://danseauxarts.wordpress.com/" target="_blank" rel="noreferrer">Danse aux Arts</a></li>
+              </ul>
+            </details>
+
+            <details>
+              <summary>
+                <span class="lang lang-fr inline" lang="fr">Ecoles de Boogie Woogie</span>
+                <span class="lang lang-en inline" lang="en">Boogie Woogie schools</span>
+              </summary>
+              <ul class="link-list">
+                <li><a href="https://rockinflip.com" target="_blank" rel="noreferrer">Rockin Flip</a></li>
+              </ul>
+            </details>
+          </div>
+        </section>
+
+        <section id="communautes" class="section">
+          <div class="section-header">
+            <h2>
+              <span class="lang lang-fr inline" lang="fr">Communautes et groupes</span>
+              <span class="lang lang-en inline" lang="en">Communities and groups</span>
+            </h2>
+            <p class="lang lang-fr block" lang="fr">Les canaux principaux pour se tenir au courant et organiser des sorties.</p>
+            <p class="lang lang-en block" lang="en">Main channels to stay updated and organize outings.</p>
+          </div>
+
+          <div class="card-grid">
+            <article class="style-card">
+              <h3>WhatsApp</h3>
+              <ul class="link-list compact">
+                <li><a href="https://chat.whatsapp.com/IMj0SmTsOq7J34jxfcvPBT" target="_blank" rel="noreferrer">Swing in Paris</a></li>
+                <li><a href="https://chat.whatsapp.com/Fwd7KqlWmRbDuysOkpx7FC" target="_blank" rel="noreferrer">Lindy Hop in Paris I</a></li>
+                <li><a href="https://chat.whatsapp.com/BKwFrtvN3VJE6y0VPw46b6" target="_blank" rel="noreferrer">Lindy Hop in Paris II</a></li>
+                <li><a href="https://chat.whatsapp.com/FNVzjKZNdosFgE20UE0TZu" target="_blank" rel="noreferrer">Balboa in Paris</a></li>
+                <li><a href="https://chat.whatsapp.com/KRAmSdWrpSf6C96z2o0OQg" target="_blank" rel="noreferrer">Blues in Paris</a></li>
+                <li><a href="https://chat.whatsapp.com/H5oichpPjEZCcsrJoPbh1l" target="_blank" rel="noreferrer">Boogie Woogie in Paris</a></li>
+                <li><a href="https://chat.whatsapp.com/EeFOkR0R0aXI2QFNPYlr1m" target="_blank" rel="noreferrer">Histoire &amp; Culture</a></li>
+              </ul>
+            </article>
+            <article class="style-card">
+              <h3>Signal</h3>
+              <ul class="link-list compact">
+                <li><a href="https://signal.group/#CjQKIOrHXeVLUc3T5S-Hw1ZcyNyCKsd1gEUzB-oiOTblOU7oEhCtr4cE58Y3wD3k7kSuxttW" target="_blank" rel="noreferrer">Lindy Hop in Paris</a></li>
+                <li><a href="https://signal.group/#CjQKIC92BzlSuGa2kgkD6g55TihNQyeuYN2Up88rIEzpCbioEhBwSQ2WY5O6l-Hutd7JmGXz" target="_blank" rel="noreferrer">Balboa in Paris</a></li>
+                <li><a href="https://signal.group/#CjQKIESioTEQrpP3pTT78yyTS9hDrhaqsOursfS0sopKJ9CZEhA4Damj6yq3gXMpgg9wgGNy" target="_blank" rel="noreferrer">Blues in Paris</a></li>
+              </ul>
+            </article>
+            <article class="style-card">
+              <h3>Facebook</h3>
+              <ul class="link-list compact">
+                <li><a href="https://www.facebook.com/groups/LindyHopParis" target="_blank" rel="noreferrer">Lindy Hop Paris</a></li>
+                <li><a href="https://www.facebook.com/groups/350290171682887/" target="_blank" rel="noreferrer">West Coast Swing France</a></li>
+                <li><a href="https://www.facebook.com/groups/1792057900961497" target="_blank" rel="noreferrer">Rock et Swing a Paris</a></li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section id="histoire" class="section">
+          <div class="section-header">
+            <h2>
+              <span class="lang lang-fr inline" lang="fr">Histoire et culture</span>
+              <span class="lang lang-en inline" lang="en">History and culture</span>
+            </h2>
+            <p class="lang lang-fr block" lang="fr">Articles et videos pour aller plus loin.</p>
+            <p class="lang lang-en block" lang="en">Articles and videos to go deeper.</p>
+          </div>
+
+          <div class="accordion-grid">
+            <details>
+              <summary>
+                <span class="lang lang-fr inline" lang="fr">Jazz et Swing</span>
+                <span class="lang lang-en inline" lang="en">Jazz and Swing</span>
+              </summary>
+              <ul class="link-list">
+                <li><a href="https://www.swingin.paris/le_jazz_a_paris.html">Le Jazz a Paris</a></li>
+                <li><a href="https://www.swingin.paris/le_blues_a_paris.html">Le Blues a Paris</a></li>
+                <li><a href="https://youtu.be/AyZm3FHWeqI?feature=shared" target="_blank" rel="noreferrer">La fabuleuse histoire du Jazz</a></li>
+              </ul>
+            </details>
+            <details>
+              <summary>
+                <span class="lang lang-fr inline" lang="fr">Lindy Hop</span>
+                <span class="lang lang-en inline" lang="en">Lindy Hop</span>
+              </summary>
+              <ul class="link-list">
+                <li><a href="https://www.swingin.paris/histoire_du_lindy_hop.html">L'histoire du Lindy Hop</a></li>
+                <li><a href="https://www.swingin.paris/Figures_emblematique_du_Lindy_Hop.html">Les figures emblematiques</a></li>
+                <li><a href="https://swungover.wordpress.com/2013/10/02/swing-history-101-the-birth-of-lindy-hop-early-1900s-1929/" target="_blank" rel="noreferrer">The birth of Lindy Hop</a></li>
+                <li><a href="https://youtu.be/dIuhsUSXCvA?feature=shared" target="_blank" rel="noreferrer">The history of Swing</a></li>
+              </ul>
+            </details>
+            <details>
+              <summary>
+                <span class="lang lang-fr inline" lang="fr">Charleston</span>
+                <span class="lang lang-en inline" lang="en">Charleston</span>
+              </summary>
+              <ul class="link-list">
+                <li><a href="https://www.swingin.paris/histoire_du_charleston.html">L'histoire du Charleston</a></li>
+                <li><a href="https://www.youtube.com/watch?v=A9wzOgG3kB4" target="_blank" rel="noreferrer">Abbreviated Charleston history</a></li>
+              </ul>
+            </details>
+            <details>
+              <summary>
+                <span class="lang lang-fr inline" lang="fr">Blues</span>
+                <span class="lang lang-en inline" lang="en">Blues</span>
+              </summary>
+              <ul class="link-list">
+                <li><a href="https://www.swingin.paris/histoire_du_blues.html">L'histoire du Blues</a></li>
+                <li><a href="https://www.youtube.com/watch?v=e7n1sCQTuaQ" target="_blank" rel="noreferrer">Blues : retracer les racines</a></li>
+              </ul>
+            </details>
+            <details>
+              <summary>
+                <span class="lang lang-fr inline" lang="fr">Balboa, Shag, West Coast</span>
+                <span class="lang lang-en inline" lang="en">Balboa, Shag, West Coast</span>
+              </summary>
+              <ul class="link-list">
+                <li><a href="https://www.swingin.paris/histoire_du_balboa.html">L'histoire du Balboa</a></li>
+                <li><a href="https://www.youtube.com/watch?v=yTB0GuAGd_s&list=PLB26BCCA88FC6AC43" target="_blank" rel="noreferrer">L'histoire du Balboa Bal-Swing</a></li>
+                <li><a href="https://www.swingin.paris/histoire_du_shag.html">L'histoire du Collegiate Shag</a></li>
+                <li><a href="https://youtu.be/R8BNM7W0Gd8" target="_blank" rel="noreferrer">What is Collegiate Shag?</a></li>
+                <li><a href="https://www.swingin.paris/histoire_du_west_coast_swing.html">L'histoire du West Coast Swing</a></li>
+                <li><a href="https://www.youtube.com/watch?v=TDF-Js3D1ug" target="_blank" rel="noreferrer">The history of West Coast Swing</a></li>
+              </ul>
+            </details>
+            <details>
+              <summary>
+                <span class="lang lang-fr inline" lang="fr">Rock, Boogie, Bebop</span>
+                <span class="lang lang-en inline" lang="en">Rock, Boogie, Bebop</span>
+              </summary>
+              <ul class="link-list">
+                <li><a href="https://www.swingin.paris/rock_est_il_du_swing.html">Le rock est-il du swing ?</a></li>
+                <li><a href="https://www.swingin.paris/rock_et_swing.html">TLDR : le rock est-il du swing ?</a></li>
+                <li><a href="https://www.youtube.com/watch?v=J084YAqL248" target="_blank" rel="noreferrer">L'histoire du Rock</a></li>
+                <li><a href="https://www.swingin.paris/boogie_woogie_swing.html">Le Boogie Woogie est-il du swing ?</a></li>
+                <li><a href="https://www.youtube.com/watch?v=JY7eC61vx1o" target="_blank" rel="noreferrer">Boogie Woogie documentary</a></li>
+                <li><a href="https://www.swingin.paris/bebop_swing.html">Le Bebop est-il du swing ?</a></li>
+                <li><a href="https://www.youtube.com/watch?v=10HGVN6Qapw&list=PLfM0DgeDmBFaDItQa4nFFJYewakINkf_R" target="_blank" rel="noreferrer">The history of Bebop</a></li>
+              </ul>
+            </details>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>
+          <span class="lang lang-fr inline" lang="fr">Swingin.paris - tous droits reserves.</span>
+          <span class="lang lang-en inline" lang="en">Swingin.paris - all rights reserved.</span>
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
