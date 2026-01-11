@@ -793,9 +793,12 @@
           });
         });
 
-        let touchStartX = 0;
-        let touchStartY = 0;
+        let pointerActive = false;
+        let pointerStartX = 0;
+        let pointerStartY = 0;
+        let activePointerId = null;
         const swipeThreshold = 50;
+        const hintThreshold = 16;
 
         function shiftWeek(amount) {
           state.weekStart = addDays(state.weekStart, amount);
@@ -804,27 +807,55 @@
           loadWeekEvents();
         }
 
-        weekDaysEl.addEventListener("touchstart", (event) => {
-          if (event.touches.length !== 1) return;
-          touchStartX = event.touches[0].clientX;
-          touchStartY = event.touches[0].clientY;
-        }, { passive: true });
+        function resetSwipeHint() {
+          delete weekDaysEl.dataset.swipeHint;
+        }
 
-        weekDaysEl.addEventListener("touchend", (event) => {
-          if (!touchStartX) return;
-          const endX = event.changedTouches[0].clientX;
-          const endY = event.changedTouches[0].clientY;
-          const deltaX = endX - touchStartX;
-          const deltaY = endY - touchStartY;
-          touchStartX = 0;
-          touchStartY = 0;
+        function handlePointerEnd(clientX, clientY) {
+          if (!pointerActive) return;
+          const deltaX = clientX - pointerStartX;
+          const deltaY = clientY - pointerStartY;
+          pointerActive = false;
+          activePointerId = null;
+          resetSwipeHint();
 
           if (Math.abs(deltaX) < swipeThreshold || Math.abs(deltaX) < Math.abs(deltaY) * 1.5) {
             return;
           }
 
           shiftWeek(deltaX < 0 ? 7 : -7);
-        }, { passive: true });
+        }
+
+        weekDaysEl.addEventListener("pointerdown", (event) => {
+          if (event.pointerType === "mouse" && event.button !== 0) return;
+          pointerActive = true;
+          activePointerId = event.pointerId;
+          pointerStartX = event.clientX;
+          pointerStartY = event.clientY;
+          weekDaysEl.setPointerCapture?.(event.pointerId);
+        });
+
+        weekDaysEl.addEventListener("pointermove", (event) => {
+          if (!pointerActive || event.pointerId !== activePointerId) return;
+          const deltaX = event.clientX - pointerStartX;
+          const deltaY = event.clientY - pointerStartY;
+          if (Math.abs(deltaX) > hintThreshold && Math.abs(deltaX) > Math.abs(deltaY) * 1.2) {
+            weekDaysEl.dataset.swipeHint = deltaX > 0 ? "right" : "left";
+          } else {
+            resetSwipeHint();
+          }
+        });
+
+        weekDaysEl.addEventListener("pointerup", (event) => {
+          if (event.pointerId !== activePointerId) return;
+          handlePointerEnd(event.clientX, event.clientY);
+        });
+
+        weekDaysEl.addEventListener("pointercancel", () => {
+          pointerActive = false;
+          activePointerId = null;
+          resetSwipeHint();
+        });
 
         const closeModal = () => {
           modal.hidden = true;

@@ -626,6 +626,53 @@ main {
   grid-template-columns: repeat(7, minmax(0, 1fr));
   gap: 0.45rem;
   touch-action: pan-y;
+  position: relative;
+  user-select: none;
+  cursor: grab;
+}
+
+.calendar-week:active {
+  cursor: grabbing;
+}
+
+.calendar-week::before,
+.calendar-week::after {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  border: 2px solid var(--ink);
+  background: var(--paper);
+  box-shadow: 4px 4px 0 var(--tomato);
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  pointer-events: none;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.calendar-week::before {
+  content: "<";
+  left: -18px;
+}
+
+.calendar-week::after {
+  content: ">";
+  right: -18px;
+}
+
+.calendar-week[data-swipe-hint="left"]::before {
+  opacity: 1;
+  transform: translateY(-50%) scale(1.05);
+}
+
+.calendar-week[data-swipe-hint="right"]::after {
+  opacity: 1;
+  transform: translateY(-50%) scale(1.05);
 }
 
 .day-chip {
