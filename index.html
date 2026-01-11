@@ -125,23 +125,14 @@
 
           <div class="calendar-shell" data-calendar data-timezone="Europe/Paris" data-api="https://swinginparis-calendar.shuminfr.workers.dev/events">
             <div class="calendar-top">
-              <button class="calendar-nav" type="button" data-action="prev-week">
-                <span class="lang lang-fr inline" lang="fr">Prec</span>
-                <span class="lang lang-en inline" lang="en">Prev</span>
-              </button>
+              <span class="calendar-top-spacer" aria-hidden="true"></span>
               <div class="calendar-title">
                 <span class="calendar-month" data-month-label></span>
               </div>
-              <div class="calendar-nav-group">
-                <button class="calendar-nav" type="button" data-action="today">
-                  <span class="lang lang-fr inline" lang="fr">Auj</span>
-                  <span class="lang lang-en inline" lang="en">Today</span>
-                </button>
-                <button class="calendar-nav" type="button" data-action="next-week">
-                  <span class="lang lang-fr inline" lang="fr">Suiv</span>
-                  <span class="lang lang-en inline" lang="en">Next</span>
-                </button>
-              </div>
+              <button class="calendar-nav" type="button" data-action="today">
+                <span class="lang lang-fr inline" lang="fr">Aujourd hui</span>
+                <span class="lang lang-en inline" lang="en">Today</span>
+              </button>
             </div>
 
             <div class="calendar-week" role="tablist" aria-label="Week days" data-week-days></div>
@@ -713,22 +704,6 @@
           if (!button) return;
 
           const action = button.dataset.action;
-          if (action === "prev-week") {
-            state.weekStart = addDays(state.weekStart, -7);
-            state.selectedDate = addDays(state.weekStart, 0);
-            renderWeek();
-            loadWeekEvents();
-            return;
-          }
-
-          if (action === "next-week") {
-            state.weekStart = addDays(state.weekStart, 7);
-            state.selectedDate = addDays(state.weekStart, 0);
-            renderWeek();
-            loadWeekEvents();
-            return;
-          }
-
           if (action === "today") {
             const today = startOfDay(new Date());
             state.weekStart = startOfWeek(today);
@@ -752,6 +727,39 @@
             setStatus(state.statusKey);
           });
         });
+
+        let touchStartX = 0;
+        let touchStartY = 0;
+        const swipeThreshold = 50;
+
+        function shiftWeek(amount) {
+          state.weekStart = addDays(state.weekStart, amount);
+          state.selectedDate = addDays(state.weekStart, 0);
+          renderWeek();
+          loadWeekEvents();
+        }
+
+        weekDaysEl.addEventListener("touchstart", (event) => {
+          if (event.touches.length !== 1) return;
+          touchStartX = event.touches[0].clientX;
+          touchStartY = event.touches[0].clientY;
+        }, { passive: true });
+
+        weekDaysEl.addEventListener("touchend", (event) => {
+          if (!touchStartX) return;
+          const endX = event.changedTouches[0].clientX;
+          const endY = event.changedTouches[0].clientY;
+          const deltaX = endX - touchStartX;
+          const deltaY = endY - touchStartY;
+          touchStartX = 0;
+          touchStartY = 0;
+
+          if (Math.abs(deltaX) < swipeThreshold || Math.abs(deltaX) < Math.abs(deltaY) * 1.5) {
+            return;
+          }
+
+          shiftWeek(deltaX < 0 ? 7 : -7);
+        }, { passive: true });
 
         renderWeek();
         loadWeekEvents();
