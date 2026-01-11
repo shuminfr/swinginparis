@@ -41,11 +41,17 @@
         </div>
 
         <nav class="site-nav" aria-label="Sections">
-          <a href="#calendrier">Calendrier</a>
-          <a href="#styles">Styles</a>
-          <a href="#ecoles">Ecoles</a>
-          <a href="#communautes">Communautes</a>
-          <a href="#histoire">Histoire</a>
+          <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav-links">
+            <span class="nav-toggle-icon" aria-hidden="true"></span>
+            <span class="nav-toggle-label">Menu</span>
+          </button>
+          <div class="nav-links" id="site-nav-links">
+            <a href="#calendrier">Calendrier</a>
+            <a href="#styles">Styles</a>
+            <a href="#ecoles">Ecoles</a>
+            <a href="#communautes">Communautes</a>
+            <a href="#histoire">Histoire</a>
+          </div>
         </nav>
 
         <div class="lang-switch" role="group" aria-label="Langue">
@@ -766,12 +772,20 @@
       })();
 
       (() => {
+        const nav = document.querySelector(".site-nav");
         let lastScrollY = window.scrollY;
         let ticking = false;
         const threshold = 12;
 
         function updateNavVisibility() {
           const currentY = window.scrollY;
+          if (nav && nav.classList.contains("is-open")) {
+            document.body.classList.remove("nav-hidden");
+            lastScrollY = currentY;
+            ticking = false;
+            return;
+          }
+
           if (currentY <= 10 || currentY < lastScrollY - threshold) {
             document.body.classList.remove("nav-hidden");
           } else if (currentY > lastScrollY + threshold) {
@@ -786,6 +800,33 @@
           ticking = true;
           window.requestAnimationFrame(updateNavVisibility);
         }, { passive: true });
+      })();
+
+      (() => {
+        const nav = document.querySelector(".site-nav");
+        if (!nav) return;
+        const toggle = nav.querySelector(".nav-toggle");
+        const links = nav.querySelector(".nav-links");
+        if (!toggle || !links) return;
+
+        function setOpen(open) {
+          nav.classList.toggle("is-open", open);
+          toggle.setAttribute("aria-expanded", String(open));
+        }
+
+        toggle.addEventListener("click", () => {
+          setOpen(!nav.classList.contains("is-open"));
+        });
+
+        links.addEventListener("click", (event) => {
+          if (event.target.closest("a")) {
+            setOpen(false);
+          }
+        });
+
+        window.addEventListener("resize", () => {
+          if (window.innerWidth > 768) setOpen(false);
+        });
       })();
     </script>
   </body>
