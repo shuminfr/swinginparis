@@ -12,7 +12,7 @@ This worker keeps your Google Calendar API key off the frontend. The site calls 
    - Optional: `wrangler secret put TIME_ZONE` (default: Europe/Paris)
 
 ### CALENDAR_IDS
-Use a comma-separated list of calendar IDs.
+Use a comma- or newline-separated list of calendar IDs.
 A helper list is in `worker/calendar-ids.txt`.
 
 Example:

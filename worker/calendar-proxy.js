@@ -18,7 +18,7 @@ function jsonResponse(payload, status = 200) {
 function parseCalendarIds(value) {
   if (!value) return [];
   return value
-    .split(",")
+    .split(/[\s,]+/)
     .map((item) => item.trim())
     .filter(Boolean);
 }
