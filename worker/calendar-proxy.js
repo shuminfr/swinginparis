@@ -35,7 +35,8 @@ async function fetchCalendarEvents(calendarId, apiKey, timeMin, timeMax, timeZon
 
   const response = await fetch(url.toString());
   if (!response.ok) {
-    throw new Error(`Fetch failed for ${calendarId}`);
+    const message = await response.text();
+    throw new Error(message || `Fetch failed for ${calendarId}`);
   }
 
   const data = await response.json();
@@ -79,6 +80,7 @@ export default {
 
     const timeMin = url.searchParams.get("start");
     const timeMax = url.searchParams.get("end");
+    const debug = url.searchParams.get("debug") === "1";
 
     if (!timeMin || !timeMax) {
       return jsonResponse({ error: "Missing start or end" }, 400);
@@ -98,11 +100,30 @@ export default {
 
     try {
       const results = await Promise.all(
-        calendarIds.map((id) => fetchCalendarEvents(id, apiKey, timeMin, timeMax, timeZone).catch(() => []))
+        calendarIds.map(async (id) => {
+          try {
+            const items = await fetchCalendarEvents(id, apiKey, timeMin, timeMax, timeZone);
+            return { id, items, error: null };
+          } catch (error) {
+            return { id, items: [], error: String(error.message || error) };
+          }
+        })
       );
 
-      const events = results.flat().map(mapEvent).filter(Boolean);
+      const events = results.flatMap((result) => result.items.map(mapEvent).filter(Boolean));
       events.sort((a, b) => a.start.localeCompare(b.start));
+
+      if (debug) {
+        return jsonResponse({
+          calendarCount: calendarIds.length,
+          eventCount: events.length,
+          calendars: results.map((result) => ({
+            id: result.id,
+            count: result.items.length,
+            error: result.error
+          }))
+        });
+      }
 
       return jsonResponse({ events });
     } catch (error) {
