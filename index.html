@@ -448,6 +448,18 @@
         </section>
       </main>
 
+      <div class="event-modal" data-event-modal hidden>
+        <div class="event-modal-backdrop" data-modal-close></div>
+        <div class="event-modal-content" role="dialog" aria-modal="true" aria-labelledby="event-modal-title">
+          <button class="event-modal-close" type="button" data-modal-close aria-label="Close">×</button>
+          <p class="event-modal-date" data-modal-date></p>
+          <h3 id="event-modal-title" data-modal-title></h3>
+          <p class="event-modal-time" data-modal-time></p>
+          <p class="event-modal-location" data-modal-location></p>
+          <a class="btn small" data-modal-link target="_blank" rel="noreferrer"></a>
+        </div>
+      </div>
+
       <footer class="site-footer">
         <p>
           <span class="lang lang-fr inline" lang="fr">Swingin.paris - tous droits reserves.</span>
@@ -478,21 +490,25 @@
             connect: "Configurez un endpoint API pour charger les evenements.",
             error: "Impossible de charger les evenements.",
             untitled: "Sans titre",
-            open: "Ouvrir"
-          },
-          en: {
-            allDay: "All day",
-            noEvents: "No events for this day.",
-            loading: "Loading...",
-            connect: "Set an API endpoint to load events.",
-            error: "Unable to load events.",
-            untitled: "Untitled",
-            open: "Open"
-          }
-        };
+          open: "Ouvrir",
+          openCalendar: "Ouvrir dans Google Calendar",
+          close: "Fermer"
+        },
+        en: {
+          allDay: "All day",
+          noEvents: "No events for this day.",
+          loading: "Loading...",
+          connect: "Set an API endpoint to load events.",
+          error: "Unable to load events.",
+          untitled: "Untitled",
+          open: "Open",
+          openCalendar: "Open in Google Calendar",
+          close: "Close"
+        }
+      };
 
-        const state = {
-          selectedDate: startOfDay(new Date()),
+      const state = {
+        selectedDate: startOfDay(new Date()),
           weekStart: startOfWeek(new Date()),
           eventsByDay: {},
           statusKey: ""
@@ -503,9 +519,17 @@
           return enToggle && enToggle.checked ? "en-US" : "fr-FR";
         }
 
-        function getText() {
-          return getLocale() === "en-US" ? textByLang.en : textByLang.fr;
-        }
+      function getText() {
+        return getLocale() === "en-US" ? textByLang.en : textByLang.fr;
+      }
+
+      const modal = document.querySelector("[data-event-modal]");
+      const modalTitle = modal?.querySelector("[data-modal-title]");
+      const modalDate = modal?.querySelector("[data-modal-date]");
+      const modalTime = modal?.querySelector("[data-modal-time]");
+      const modalLocation = modal?.querySelector("[data-modal-location]");
+      const modalLink = modal?.querySelector("[data-modal-link]");
+      const modalCloses = modal?.querySelectorAll("[data-modal-close]") || [];
 
         function buildFormatters(locale) {
           return {
@@ -594,9 +618,9 @@
           renderEvents();
         }
 
-        function renderEvents() {
-          const key = formatYmd(state.selectedDate);
-          const events = state.eventsByDay[key] || [];
+      function renderEvents() {
+        const key = formatYmd(state.selectedDate);
+        const events = state.eventsByDay[key] || [];
           const text = getText();
           eventsEl.innerHTML = "";
 
@@ -608,47 +632,70 @@
             return;
           }
 
-          events.forEach((event) => {
-            const item = document.createElement("article");
-            item.className = "event-item";
+        events.forEach((event) => {
+          const item = document.createElement("button");
+          item.className = "event-item";
+          item.type = "button";
 
-            const time = document.createElement("div");
-            time.className = "event-time";
-            if (event.allDay) {
-              time.textContent = text.allDay;
+          const time = document.createElement("div");
+          time.className = "event-time";
+          if (event.allDay) {
+            time.textContent = text.allDay;
             } else {
               const start = formatters.time.format(event.start);
               const end = formatters.time.format(event.end);
               time.textContent = `${start} - ${end}`;
             }
 
-            const title = document.createElement("div");
-            title.className = "event-title";
-            title.textContent = event.title || text.untitled;
+          const title = document.createElement("div");
+          title.className = "event-title";
+          title.textContent = event.title || text.untitled;
 
-            item.appendChild(time);
-            item.appendChild(title);
+          item.appendChild(time);
+          item.appendChild(title);
 
+          if (event.location) {
+            const meta = document.createElement("div");
+            meta.className = "event-meta";
+            meta.textContent = event.location;
+            item.appendChild(meta);
+          }
+
+          item.addEventListener("click", () => {
+            if (!modal) return;
+            modalTitle.textContent = event.title || text.untitled;
+            modalDate.textContent = formatters.fullDate.format(event.start);
+            if (event.allDay) {
+              modalTime.textContent = text.allDay;
+            } else {
+              const start = formatters.time.format(event.start);
+              const end = formatters.time.format(event.end);
+              modalTime.textContent = `${start} - ${end}`;
+            }
             if (event.location) {
-              const meta = document.createElement("div");
-              meta.className = "event-meta";
-              meta.textContent = event.location;
-              item.appendChild(meta);
+              modalLocation.textContent = event.location;
+              modalLocation.hidden = false;
+            } else {
+              modalLocation.textContent = "";
+              modalLocation.hidden = true;
             }
-
             if (event.link) {
-              const link = document.createElement("a");
-              link.className = "event-link";
-              link.href = event.link;
-              link.target = "_blank";
-              link.rel = "noreferrer";
-              link.textContent = text.open;
-              item.appendChild(link);
+              modalLink.href = event.link;
+              modalLink.hidden = false;
+              modalLink.textContent = text.openCalendar;
+            } else {
+              modalLink.hidden = true;
             }
-
-            eventsEl.appendChild(item);
+            modalCloses.forEach((button) => {
+              button.setAttribute("aria-label", text.close);
+            });
+            modal.hidden = false;
+            document.body.classList.add("modal-open");
           });
-        }
+
+          eventsEl.appendChild(item);
+        });
+      }
 
         async function loadWeekEvents() {
           if (!resolvedEndpoint) {
@@ -678,17 +725,20 @@
               if (Number.isNaN(start.getTime()) || Number.isNaN(end.getTime())) return;
 
               const allDay = Boolean(event.allDay);
-              const key = formatYmd(start);
-
-              grouped[key] = grouped[key] || [];
-              grouped[key].push({
-                title: event.title,
-                start,
-                end,
-                allDay,
-                location: event.location || "",
-                link: event.link || ""
-              });
+              const endBoundary = new Date(end.getTime() - 1);
+              const lastDay = startOfDay(endBoundary);
+              for (let day = startOfDay(start); day <= lastDay; day = addDays(day, 1)) {
+                const key = formatYmd(day);
+                grouped[key] = grouped[key] || [];
+                grouped[key].push({
+                  title: event.title,
+                  start,
+                  end,
+                  allDay,
+                  location: event.location || "",
+                  link: event.link || ""
+                });
+              }
             });
 
             Object.keys(grouped).forEach((key) => {
@@ -731,6 +781,15 @@
             renderWeek();
             renderEvents();
             setStatus(state.statusKey);
+            if (modal && !modal.hidden) {
+              const text = getText();
+              if (modalLink && modalLink.href) {
+                modalLink.textContent = text.openCalendar;
+              }
+              modalCloses.forEach((button) => {
+                button.setAttribute("aria-label", text.close);
+              });
+            }
           });
         });
 
@@ -767,6 +826,21 @@
           shiftWeek(deltaX < 0 ? 7 : -7);
         }, { passive: true });
 
+        const closeModal = () => {
+          modal.hidden = true;
+          document.body.classList.remove("modal-open");
+        };
+
+        modalCloses.forEach((button) => {
+          button.addEventListener("click", closeModal);
+        });
+
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape" && !modal.hidden) {
+            closeModal();
+          }
+        });
+
         renderWeek();
         loadWeekEvents();
       })();
@@ -797,6 +871,7 @@
           if (window.innerWidth > 768) setOpen(false);
         });
       })();
+
     </script>
   </body>
 </html>
