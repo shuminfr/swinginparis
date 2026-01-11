@@ -1,0 +1,3 @@
+name = "swinginparis-calendar"
+main = "calendar-proxy.js"
+compatibility_date = "2024-12-01"
